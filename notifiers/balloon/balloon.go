@@ -65,5 +65,5 @@ func (n Notifier) Push(options lib.Options, aopts ...interface{}) error {
 			mergo.Merge(&nativeOpts, nopts)
 		}
 	}
-	return n.Push(nativeOpts).Run()
+	return n.NativePush(nativeOpts)
 }
