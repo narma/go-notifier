@@ -2,7 +2,6 @@ package main
 
 import (
 	"flag"
-	"fmt"
 	"log"
 	"os"
 
@@ -29,9 +28,7 @@ func poe(err error) {
 }
 
 func main() {
-	// notifier := gonotifier.New()
 	notifier, err := gonotifier.New()
-	fmt.Printf("%+v\n", notifier)
 	if err != nil {
 		log.SetOutput(os.Stderr)
 		log.Println("Can't create notifier", err)
