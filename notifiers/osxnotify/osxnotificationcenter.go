@@ -53,13 +53,13 @@ func New(cmd string) (*Notifier, error) {
 	}, nil
 }
 
-func (n Notifier) Push(opts Options) *exec.Cmd {
+func (n Notifier) NativePush(opts Options) error {
 	args := n.argsFormatter.FormatArgs(opts)
 	cmd := exec.Command(n.Cmd, args...)
-	return cmd
+	return cmd.Run()
 }
 
-func (n Notifier) GeneralPush(options lib.Options, aopts ...interface{}) error {
+func (n Notifier) Push(options lib.Options, aopts ...interface{}) error {
 	nativeOpts := Options{
 		Title:   options.Title,
 		Message: options.Message,

@@ -1,7 +1,7 @@
 package lib
 
 type Notifier interface {
-	GeneralPush(options Options, otherOpts ...interface{}) error
+	Push(options Options, otherOpts ...interface{}) error
 }
 
 type Options struct {

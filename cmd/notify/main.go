@@ -35,5 +35,5 @@ func main() {
 		return
 	}
 	options := ParseCmdLine()
-	notifier.GeneralPush(options)
+	notifier.Push(options)
 }
